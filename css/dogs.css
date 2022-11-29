@@ -1,14 +1,17 @@
-nav a:hover{
-    text-decoration: underline;
-  }
-  
-  nav a:focus{
-    text-decoration: underline;
-  }
+/* skip a */
+html{
+  overflow-x: hidden;
+}
+body{
+  font-family: "Cabin Sketch";
+}
 
   .skip a{
     position: absolute;
     top: -40px;
+    background-color: white;
+    border: solid black 2px;
+    color: #2b1807c0;
   }
 
   .skip a:focus{
@@ -16,70 +19,361 @@ nav a:hover{
     top:20px;
   }
 
-  *:focus{
-    border: solid 2px;
+
+/* acessiblity */
+
+ *:focus{
+    border: black solid 2px;
   }
 
-  .container{
+
+
+/* header and nav */
+
+header{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: nowrap;
+  height: 20%;
+  background-color: #2b1807c0;
+  width: 100%;
+  padding: 5%;
+}
+
+.nav_item a:hover{
+    text-decoration: underline;
+    color: black;
+  }
+  
+.nav_item a:focus{
+    text-decoration: underline;
+    color:black;
+  }
+
+#logo{
+  width: 40%;
+  background: transparent;
+  border: double black 10px;
+  border-radius: 10px;
+  margin: 12px;
+  position: relative;
+  justify-self: center;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  text-align: center;
+
+}
+.nav_item {
+  color: white;
+  padding: 5% 15% ;
+  text-decoration: none;
+}
+
+.nav_item a:visited {
+color: white;
+text-decoration: none;
+}
+
+.nav_item a.current {
+  text-decoration: underline;
+  background: #D7C3A3;
+  border-radius: 5px;
+  border: solid #D7C3A3 3px;
+  color: #2b1807c0;
+}
+
+
+/* main container */
+.container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 15px;
+    grid-gap: 15px;
+    background-color: #D7C3A3;
+    width: 100%;
   }
 
   .container div:first-child{
     grid-column: 1/-1;
-    /* size and position are given through the grid column above since its taking up the whole grid*/
-    background-image: url("../images/about_background_dog.jpg");
-    background-repeat: no-repeat; /* Parallax effect */
-    background-attachment: fixed; /* Parallax effect */     
-    background-position: center;  /* Parallax effect */
-    background-size: cover;       /* Parallax effect */
-   
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    vertical-align: middle;
   }
-  #img{
+
+  .about-text{
+    grid-column:1/ -1;
+    background-color: rgba(252, 252, 252, 0.664);
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    width: 70%;
+    padding:5%;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 25px;
+    height: fit-content;
+  }
+
+  .about-text h1{
+    padding:7%;}
+
+
+  .about-text a:focus{
+    background-color: white;
+  }
+
+  .about-image{
+      grid-row: 1/-1;
+      height: cover;
+      width: 200%;
+      overflow: hidden;
+      object-fit: fill;
+  }
+  
+  
+  img{
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: fill;
   }
 
-.about-image{
-    grid-row: 1/-1;
-}
-
-.about-text, .golden-doodle-gallery, .weiner-gallery, .golden-retriever-gallery, .pug-gallery{
-    grid-column:1/ -1;
-
-
-}
 
 .about-text{
     grid-row : 1;
 }
 
+.pug-gallery{
+    grid-row : 5;
+}
 
 .golden-doodle-gallery{
     grid-row : 2;
 }
 
-div.weiner-gallery{
+.weiner-gallery{
     grid-row : 3;
 }
 
 .golden-retriever-gallery{
     grid-row : 4;
 }
-.pug-gallery{
-  grid-row : 5;
+
+.golden-doodle-gallery, .weiner-gallery, .golden-retriever-gallery, .pug-gallery{
+    grid-column:1/ -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    align-items: center;
+    padding: 10%;
+    border-bottom: double black 3px;
 }
 
-.golden-doodle-gallery, .golden-retriever-gallery, .pug-gallery, .weiner-gallery{
+.golden-doodle-gallery img, .weiner-gallery img, .golden-retriever-gallery img, .pug-gallery img{
+  grid-column:1/ -1;
+  border: solid black 2px;
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  max-height: inherit; 
+  grid-row-end: 4; 
+}
+
+
+h2{
+  color: #654321 ;
+  font-size: 110%;
+  text-decoration: bold;
+}
+
+
+.breedTitle{
+  grid-column: 1/  span 2;
+  font-weight: bold;
+  text-transform: uppercase;
+  justify-self: center;
+  align-self: center;
+  font-size: 135%;
+  padding: 10%;
+  border: dashed #2b1807c0 5px;
+  background-color: #2b1807c0;
+  color: rgb(224, 209, 75);
+  border-radius: 10px;
+
+}
+
+.dogBreeds ul {
+  list-style-type: square;
+  justify-self: center;
+  margin: 13px;
+  align-self: center;
+}
+
+.dogBreeds{ 
+  grid-column: 1/  span 2;
+  justify-self: center;
+  align-self: center;
+}
+
+h1{
+  font-weight: bolder;
+  text-decoration: wavy;
+  text-align: center;
+}
+
+footer{
+  background-color:#2b1807c0 ;
+  margin: auto;
+  padding: 10% 5%;
+} 
+footer h2{
+  color: #D7C3A3;
+}
+footer ul{
+  font-size: 90%;
+  color: #D7C3A3;
+  list-style-type: square;
+  padding: 0% 10% ;
+}
+
+footer ul li a:visited{
+  color:#D7C3A3;
+  text-transform: none;
+}
+
+footer ul li a{
+  color: #D7C3A3;
+  text-decoration: underline;
+}
+
+footer h1{
+  color: white;
+  padding: 3%;
+}
+
+footer .copywrite{
+  border-top: solid 2px #2b1807;
+  border-bottom: solid 2px #2b1807;
+  font-weight: none;
+}
+
+footer .author{
+  padding-bottom:10%;
+}
+
+p{
+  text-indent: 20px;
+}
+
+
+@media screen and (min-width: 600px) {
+  header{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  #logo{
+    width: 30%;
+  }
+  
+  nav ul{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    row-gap: 10px;
+    white-space: nowrap;
+    font-size: 110%;
+  }
+
+.golden-doodle-gallery img, .weiner-gallery img, .golden-retriever-gallery img, .pug-gallery img{
+  grid-column: unset;
+  border: solid black 2px;
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  max-height: inherit; 
+  grid-row-end: unset;
+}
+  
+.dogBreeds{ 
+  grid-column: 1/  span 1;
+}
+
+
+h1{
+    font-size: 130%;
+  }
+
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10%;
+  justify-self: center;
+}
+footer div{
+  align-content: center;
+}
+.copywrite{
+  grid-column: 1/ span 2;
+}
+}
+
+@media screen and (min-width: 900px){
+  nav ul{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    row-gap: 10px;
+    white-space: nowrap;
+    margin-right: 60px ;
+    font-size: 110%;
+  }
+#logo{
+  width: 20%;
+}
+
+  .golden-doodle-gallery, .weiner-gallery, .golden-retriever-gallery, .pug-gallery{
+    grid-column:1/ -1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 15px;
-}
+  grid-row-gap: 60px;
+grid-column-gap: 30px;}
 
-.DogBreeds{
-      grid-column: 1 /-1;
-      justify-self: center;
-      align-self:center;
+  .dogBreeds{ 
+    grid-column: 2/ span 2;
+    font-size: 150%;
+  }
+
+  h1{
+    font-size: 150%;
+  }
+
+  .sources li, .author-info li{
+    font-size: 100%;
+  }
+  
+  .breedTitle{
+    grid-column: 1/ span 1;
+    font-size: 170%;
+  }
+
+
+  .about-text{
+    font-size: 120%;
+    line-height: 130%;
+  border: solid black 5px;}
+
+
+  footer h1, footer ul{
+    font-size: 130%;
+  }
+ 
 }
