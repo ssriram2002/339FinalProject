@@ -63,23 +63,24 @@ nav ul{
   white-space: nowrap;
   column-gap: 40px;
   margin-bottom: 10%;
-  color: white;
 }
 
 
 .nav_item a:link{
   text-decoration: none;
+  color: white;
   padding: 5% 15%;
 }
 
+.nav_item a:visited {
+color: white;
+}
 
 
 .nav_item a:hover {
   background-color: rgba(0, 0, 0, 0.253);
   border-radius: 5px;
   }
-
-
 
   .nav_item .current {
     background-color: #d7c3a3a8;
@@ -88,13 +89,11 @@ nav ul{
     color: black;
     text-decoration: underline black;
   }
-
   .nav_item a:active {
     background-color: #D7C3A3;
     border-radius: 5px;
     border: solid rgba(0, 0, 0, 0.253) 2px;
   }
-
 
 
 /* main container */
