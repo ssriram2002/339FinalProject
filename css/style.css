@@ -101,15 +101,13 @@ html{
 
     .container{
         background-color: #D7C3A3;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
 
      }
     
   
     .Intro{
-        grid-column: 1/-1;
-        grid-row: 1;
+        /* grid-column: 1/-1;
+        grid-row: 1; */
         background-color: rgba(252, 252, 252, 0.664);
         display: inline-block;
         justify-self: center;
@@ -134,10 +132,6 @@ html{
       }  
 
 .pet-type{
-  grid-row:2;
-  grid-column: 1/-1;
-display: flex;
-flex-direction:row;
 justify-content: space-around;
 text-decoration: underline;
 font:bolder;
@@ -146,29 +140,27 @@ margin-top: 10px;}
 
 
  .dog-breeds{
-        grid-column: 1/ span 1;
+        /* grid-column: 1/ span 1; */
         display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          margin: 10px;
-        grid-row: 3;
-        justify-content: space-around;
+          flex-direction: column;
+          flex-wrap: nowrap;
+  
+        text-align:center ;
+        align-items: center;
     }
   .cat-breeds{
-      grid-column: 2/ span 1;
+      /* grid-column: 2/ span 1; */
       display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          margin: 10px;
-      grid-row: 3;
-      justify-content: space-around;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    text-align:center ;
+    align-items: center;
   }
 
 
 
     .dog-card, .cat-card{
         border: dashed #2b1807c0 5px;
-        width: 90%;
         margin: 30px 10px ;
         border-radius: 10px;
         flex-basis: 300px;
@@ -246,6 +238,32 @@ margin-top: 10px;}
 
 
       @media screen and (min-width: 600px){
+
+        .container{
+          display: grid;
+        }
+
+        .Intro{
+          grid-column: 1/ span 2;
+          
+          grid-row: 1; }
+
+        .dog-breeds, .cat-breeds{
+          display: flex;
+          flex-direction: column;
+        }
+
+        .dog-breeds{
+          grid-column: 1/ span 1;
+          grid-row: 3;}
+
+          .cat-breeds{
+            grid-column: 2/ span 1;
+            grid-row:3;}
+
+
+
+
         header{
             flex-direction: row-reverse;
             justify-content: space-between;
@@ -294,7 +312,7 @@ margin-top: 10px;}
     }
 }
     
-@media screen and (min-width: 1150px)  {
+@media screen and (min-width: 1000px)  {
     nav ul{
         flex-direction: row;
         flex-wrap: nowrap;
@@ -338,6 +356,16 @@ margin-top: 10px;}
       }
       .dog-card, .cat-card{
         flex-basis: 250px;
+      }
+      .dog-breeds, .cat-breeds{
+        display: flex;
+        flex-direction: row;
+        grid-column: 1/ span 2;
+        justify-content:  space-around;
+        margin: 30px;
+      }
+      .cat-breeds{
+        grid-row:4;
       }
 } 
 
