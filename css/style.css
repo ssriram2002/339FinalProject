@@ -2,6 +2,7 @@
 /* skip a */
 html{
     overflow-x: hidden;
+    background-color: #D7C3A3;
   }
   body{
     font-family: "Cabin Sketch";
@@ -9,10 +10,12 @@ html{
   
     .skip a{
       position: absolute;
-      top: -40px;
+      top: -70px;
+      padding: 2%;
       background-color: white;
-      border: solid black 2px;
+      border: solid black 4px;
       color: #2b1807c0;
+      z-index: 2;
     }
   
     .skip a:focus{
@@ -99,25 +102,22 @@ html{
 
 
 
-    .container{
+   #main{
         background-color: #D7C3A3;
 
      }
     
   
     .Intro{
-        /* grid-column: 1/-1;
-        grid-row: 1; */
         background-color: rgba(252, 252, 252, 0.664);
-        display: inline-block;
-        justify-self: center;
+        display: block;
+        justify-content: center;
         align-self: center;
         width: 70%;
         padding:5%;
-        margin: auto;
+        margin: 10% auto;
         border-radius: 10px;
-        margin: 25px;
-        height: fit-content;
+        height: fit content;
         border: solid black 5px;
       }
     
@@ -237,7 +237,7 @@ margin-top: 10px;}
       
 
 
-      @media screen and (min-width: 600px){
+      @media screen and (min-width: 768px){
 
         .container{
           display: grid;

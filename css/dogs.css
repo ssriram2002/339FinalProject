@@ -6,13 +6,15 @@ body{
   font-family: "Cabin Sketch";
 }
 
-  .skip a{
-    position: absolute;
-    top: -40px;
-    background-color: white;
-    border: solid black 2px;
-    color: #2b1807c0;
-  }
+.skip a{
+  position: absolute;
+  top: -70px;
+  padding: 2%;
+  background-color: white;
+  border: solid black 4px;
+  color: #2b1807c0;
+  z-index: 2;
+}
 
   .skip a:focus{
     position: absolute;
@@ -297,7 +299,7 @@ p{
 }
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   header{
     flex-direction: row-reverse;
     justify-content: space-between;
